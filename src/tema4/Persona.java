@@ -51,8 +51,4 @@ public class Persona {
         aux = "Mi nombre es " + nombre + ", mi DNI es " + DNI + " y tengo " + edad + " años.";
         return aux;
     }
-    
-    
-    
-    
 }

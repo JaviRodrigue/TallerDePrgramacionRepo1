@@ -7,36 +7,45 @@ package tema4;
 
 
 public abstract class Figura {
-    private String colorRelleno;
-    private String colorLinea;
-   
-    public Figura(String unCR, String unCL){
-        setColorRelleno(unCR);
-        setColorLinea(unCL);
+    private String Relleno;
+    private String Borde;
+
+    public Figura(String Relleno, String Borde) {
+        this.Relleno = Relleno;
+        this.Borde = Borde;
+    }
+
+    public String getRelleno() {
+        return Relleno;
+    }
+
+    public void setRelleno(String Relleno) {
+        this.Relleno = Relleno;
+    }
+
+    public String getBorde() {
+        return Borde;
+    }
+
+    public void setBorde(String Borde) {
+        this.Borde = Borde;
     }
     
+    
+    @Override
     public String toString(){
         String aux = "Area: " + this.calcularArea() +
-                     " CR: "  + getColorRelleno() + 
-                      " CL: " + getColorLinea();             
+                     " CR: "  + getRelleno() + 
+                      " CL: " + getBorde();             
              return aux;
        }
-
-    
-    public String getColorRelleno(){
-        return colorRelleno;       
-    }
-    public void setColorRelleno(String unColor){
-        colorRelleno = unColor;       
-    }
-    public String getColorLinea(){
-        return colorLinea;       
-    }
-    public void setColorLinea(String unColor){
-        colorLinea = unColor;       
-    }
     
     public abstract double calcularArea();
     public abstract double calcularPerimetro();
+    
+    public void despintar(){
+        this.Relleno = "blanco";
+        this.Borde = "negro";
+    }
      
 }
